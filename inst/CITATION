@@ -5,7 +5,6 @@ bibentry(
   title    = "Bayesian estimation of restricted latent class models: Extending priors, link functions, and structural models",
   author   = "James Joseph Balamuta",
   school  = "University of Illinois Urbana-Champaign",
-  doi      = "10.1080/00273171.2021.1985949",
   year     = "2021",
   textVersion = paste("Balamuta, J. J. (2021). Bayesian estimation of restricted latent class models: Extending priors, link functions, and structural models. University of Illinois Urbana-Champaign.")
 )
@@ -16,10 +15,10 @@ bibentry(
   author = "Yinyin Chen, Steven Andrew Culpepper, and Feng Liang",
   year   = 2020,
   journal = "Psychometrika",
-  url    = "https://rdcu.be/b3Pxy",
+  url    = "https://doi.org/10.1007/s11336-019-09693-2",
   textVersion =
     paste("Chen, Y., Culpepper, S. A., and Liang, F. (2020).",
           "A sparse latent class model for cognitive diagnosis.",
           "Psychometrika, 85, 121-153.",
-	        "URL <https://rdcu.be/b3Pxy>.")
+	        "URL <https://doi.org/10.1007/s11336-019-09693-2>.")
 )
