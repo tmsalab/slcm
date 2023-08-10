@@ -1,0 +1,32 @@
+Package: slcm
+Title: Sparse Latent Class Model for Cognitive Diagnosis
+Version: 0.1.0
+Authors@R: c(
+      person("James Joseph", "Balamuta",
+             email = "balamut2@illinois.edu", 
+             role = c("aut", "cre", "cph"), 
+             comment = c(ORCID = "0000-0003-2826-8458")
+      ),
+    person("Steven Andrew", "Culpepper",
+           email = "sculpepp@illinois.edu", 
+           role = c("aut", "cph"), 
+           comment = c(ORCID = "0000-0003-4226-6176")
+           )
+    )
+Description: Perform a Bayesian estimation of the exploratory 
+    Sparse Latent Class Model for Binary Data 
+    described by Chen, Y., Culpepper, S. A., and Liang, F. (2020) 
+    <doi:10.1007/s11336-019-09693-2>.
+License: GPL (>= 2)
+Encoding: UTF-8
+RoxygenNote: 7.2.3
+LinkingTo: 
+    Rcpp,
+    RcppArmadillo
+Imports: 
+    Rcpp
+URL: https://github.com/tmsalab/slcm
+BugReports: https://github.com/tmsalab/slcm/issues
+Roxygen: list(markdown = TRUE)
+Suggests: 
+    edmdata
