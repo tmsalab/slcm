@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://tmsalab.github.io/slcm/404.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://tmsalab.github.io/slcm/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://tmsalab.github.io/slcm/index.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://tmsalab.github.io/slcm/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/slcm-package.html</loc>
+    <loc>https://tmsalab.github.io/slcm/reference/slcm-package.html</loc>
   </url>
   <url>
-    <loc>/reference/slcm.html</loc>
+    <loc>https://tmsalab.github.io/slcm/reference/slcm.html</loc>
   </url>
 </urlset>
