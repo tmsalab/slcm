@@ -16,6 +16,60 @@ new_slcm_model = function(model_mcmc,
     )
 }
 
+#' Print the SLCM object
+#' 
+#' Custom printing class to reveal features of the fitted SLCM.
+#' 
+#' @param x      the `slcm` object.
+#' @param digits the number of significant digits
+#' @param ...    further arguments passed to or from other methods.
+#' 
+#' @returns 
+#' Print details and estimates found within the fitted SLCM. 
+#' Return the model invisibly (via [`invisible()`])
+#' 
+#' @export
+print.slcm = function(x, digits = max(3L, getOption("digits") - 3L), ...) { 
+  details = x$details
+  cat("\nModel Details:\n",
+      "- Observations (n): ", details$n, "\n",
+      "- Items (j): ", details$j, "\n",
+      "- Attributes (k): ", details$k, "\n",
+      "- Runtime: ", details$runtime, "\n",
+      "- Date: ", details$date_time, "\n",
+      "- Package Version: ", details$package_version, "\n",
+      "\n", sep = "")
+
+  cat("Chain properties:\n",
+      "- Burn in: ", details$burnin, "\n",
+      "- Chain Length: ", details$chain_length, "\n",
+      "- Total Iterations: ", details$chain_length + details$burnin, "\n",
+      "\n", sep = "")  
+  
+  cat("Hyperparameter Details:\n",
+      "- m0: ", details$n, "\n",
+      "- bq: ", details$j, "\n",
+      "- l1:\n", sep = "")
+  print.default(format(t(details$l1), digits = digits), print.gap = 2L, 
+                quote = FALSE)
+  
+  cat("\n\n")
+  
+  cat("Beta Coefficients:\n")
+  print.default(format(x$estimates$beta$mean, digits = digits), print.gap = 2L, 
+                  quote = FALSE)
+  
+  cat("\nDelta activeness:\n")
+  print.default(format(x$estimates$delta, digits = digits), print.gap = 2L, 
+                quote = FALSE)
+  
+  cat("\nQ matrix:\n")
+  print.default(format(x$estimates$q, digits = digits), print.gap = 2L, 
+                quote = FALSE)
+  
+  cat("\n")
+  invisible(x)
+}
 
 
 #' Sparse Latent Class Model for Cognitive Diagnosis (SLCM)
@@ -129,8 +183,8 @@ slcm = function(
             burnin = burnin,
             chain_length = chain_length,
             runtime = timing[["elapsed"]],
-            package_version = utils::packageVersion("slcm"),
-            date_time = datetime_model_execution
+            package_version = as.character(utils::packageVersion("slcm")),
+            date_time = as.character(datetime_model_execution)
         )
     )
 

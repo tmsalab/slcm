@@ -12,6 +12,7 @@ Perform a Bayesian estimation of the exploratory Sparse Latent Class Model for B
 Useful links:
 \itemize{
   \item \url{https://github.com/tmsalab/slcm}
+  \item \url{https://tmsalab.github.io/slcm/}
   \item Report bugs at \url{https://github.com/tmsalab/slcm/issues}
 }
 
