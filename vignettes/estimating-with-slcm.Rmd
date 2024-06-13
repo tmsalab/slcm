@@ -1,0 +1,131 @@
+---
+title: "Estimating with SLCM"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{estimating-with-slcm}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Overview
+
+This vignette provides an introduction to the `slcm` package, which facilitates 
+sparse latent class modeling. Sparse latent class modeling is useful for 
+identifying subgroups within a population based on observed dichotomous data, 
+while also enforcing sparsity to improve interpretability and prevent overfitting.
+
+## Installation
+
+You can install the released version of slcm from
+[CRAN](https://CRAN.R-project.org) with:
+
+
+```{r}
+#| label: install-cran
+#| eval: false
+install.packages("slcm")
+```
+
+Or, you can be on the cutting-edge development version on
+[GitHub](https://github.com/tmsalab/slcm) using:
+
+```{r}
+#| label: install-github
+#| eval: false
+# install.packages("devtools")
+devtools::install_github("tmsalab/slcm")
+```
+
+## Usage
+
+To use `slcm`, load the package using:
+
+```{r}
+#| label: setup
+library(slcm)
+```
+
+From here, the SLCM model can be estimated using:
+
+```{r}
+#| label: model-call
+#| eval: false
+model_slcm = slcm::slcm(
+  y = <data>,
+  k = <k>
+)
+```
+
+## Estimating Sparse Latent Class Models
+
+### Preparing Data
+
+The package requires an item matrix of dichtomous data. 
+Each row represents an observation, and each column represents an item.
+
+We can retrieve the matrix reasoning data set used in the SLCM paper from the
+`edmdata` package:
+
+```{r}
+data("items_matrix_reasoning", package = "edmdata")
+```
+
+## Model Estimation
+
+To estimate a sparse latent class model, use the `slcm()` function. 
+The basic usage involves specifying the data and the number of attributes ($k$).
+
+
+```{r}
+# Use a demo data set from the paper
+
+# Set a seed for reproducibility
+set.seed(123)
+
+# Set for demonstration purposes, increase to at least 1,000 in practice.
+burnin = 50       
+
+# Set for demonstration purposes, increase to at least 10,000 in practice. 
+chain_length = 100 
+
+model_reasoning = slcm(
+  items_matrix_reasoning, k = 4, 
+  burnin = burnin, chain_length = chain_length)
+```
+
+## Model Output
+
+The `slcm()` function returns an object of class `slcm`, which contains the 
+estimated parameters (`estimates`), MCMC samples (`chain`), and model details 
+(`details`).
+
+You can access different components of the fitted model using accessor functions:
+
+
+### Class Probabilities
+
+```{r}
+# Class probabilities
+model_reasoning$estimates$pi$mean
+```
+
+### Item Probabilities
+
+```{r}
+# Item response probabilities
+model_reasoning$estimates$theta$mean
+```
+
+### Q Matrix
+
+```{r}
+# Item response probabilities
+model_reasoning$estimates$q
+```
