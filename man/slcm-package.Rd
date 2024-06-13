@@ -3,7 +3,6 @@
 \docType{package}
 \name{slcm-package}
 \alias{slcm-package}
-\alias{_PACKAGE}
 \title{slcm: Sparse Latent Class Model for Cognitive Diagnosis}
 \description{
 Perform a Bayesian estimation of the exploratory Sparse Latent Class Model for Binary Data described by Chen, Y., Culpepper, S. A., and Liang, F. (2020) \doi{10.1007/s11336-019-09693-2}.

@@ -19,14 +19,17 @@ Description: Perform a Bayesian estimation of the exploratory
     <doi:10.1007/s11336-019-09693-2>.
 License: GPL (>= 2)
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 LinkingTo: 
     Rcpp,
     RcppArmadillo
 Imports: 
+    edmdata,
     Rcpp
 URL: https://github.com/tmsalab/slcm, https://tmsalab.github.io/slcm/
 BugReports: https://github.com/tmsalab/slcm/issues
 Roxygen: list(markdown = TRUE)
 Suggests: 
-    edmdata
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
