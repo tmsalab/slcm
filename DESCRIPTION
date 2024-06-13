@@ -31,6 +31,5 @@ BugReports: https://github.com/tmsalab/slcm/issues
 Roxygen: list(markdown = TRUE)
 Suggests: 
     altdoc,
-    knitr,
     rmarkdown
 VignetteBuilder: knitr
