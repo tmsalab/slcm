@@ -13,11 +13,16 @@ new_slcm_model = function(model_mcmc,
     colnames(estimates$beta$mean) <- paste0("B_", attribute_description)
     rownames(estimates$beta$mean) <- paste0("Item", seq_len(details$j))
     
+    colnames(estimates$theta$mean) <- paste0("Theta_", attribute_description)
+    rownames(estimates$theta$mean) <- paste0("Item", seq_len(details$j))
+    
     colnames(estimates$delta) <- paste0("D_", attribute_description)
     rownames(estimates$delta) <- paste0("Item", seq_len(details$j))
     
     colnames(estimates$q) <- paste0("Q_", seq_len(details$k))
     rownames(estimates$q) <- paste0("Item", seq_len(details$j))
+    
+    names(estimates$pi$mean) <- attribute_description
     
     structure(
         list(
