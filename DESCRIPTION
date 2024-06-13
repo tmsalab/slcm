@@ -26,7 +26,7 @@ LinkingTo:
 Imports: 
     edmdata,
     Rcpp
-URL: https://github.com/tmsalab/slcm, https://tmsalab.github.io/slcm/
+URL: https://tmsalab.github.io/slcm/, https://github.com/tmsalab/slcm
 BugReports: https://github.com/tmsalab/slcm/issues
 Roxygen: list(markdown = TRUE)
 Suggests: 
