@@ -6,6 +6,19 @@ new_slcm_model = function(model_mcmc,
     estimate_chain = lapply(model_mcmc, summarize_model)
     estimates = c(estimate_chain, estimates)
     chain = model_mcmc[!(names(model_mcmc) %in% estimates)]
+    
+    
+    # Fix binary and order
+    attribute_description = attribute_pattern_table_header(details$k, 2, details$k)
+    colnames(estimates$beta$mean) <- paste0("B_", attribute_description)
+    rownames(estimates$beta$mean) <- paste0("Item", seq_len(details$j))
+    
+    colnames(estimates$delta) <- paste0("D_", attribute_description)
+    rownames(estimates$delta) <- paste0("Item", seq_len(details$j))
+    
+    colnames(estimates$q) <- paste0("Q_", seq_len(details$k))
+    rownames(estimates$q) <- paste0("Item", seq_len(details$j))
+    
     structure(
         list(
             estimates = estimates, # Iterates over each parameter and obtains summary information
@@ -31,6 +44,8 @@ new_slcm_model = function(model_mcmc,
 #' @export
 print.slcm = function(x, digits = max(3L, getOption("digits") - 3L), ...) { 
   details = x$details
+  
+  
   cat("\nModel Details:\n",
       "- Observations (n): ", details$n, "\n",
       "- Items (j): ", details$j, "\n",
@@ -56,6 +71,7 @@ print.slcm = function(x, digits = max(3L, getOption("digits") - 3L), ...) {
   cat("\n\n")
   
   cat("Beta Coefficients:\n")
+  
   print.default(format(x$estimates$beta$mean, digits = digits), print.gap = 2L, 
                   quote = FALSE)
   
