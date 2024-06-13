@@ -10,8 +10,10 @@
 #' 
 #' @export
 #' @examples
+#' # K = 3
 #' attribute_pattern_table_header(3)
 #' 
+#' # K = 4
 #' attribute_pattern_table_header(4)
 attribute_pattern_table_header = function(k, m = 2, order = k) {
   n_class = m^k

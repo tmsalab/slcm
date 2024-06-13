@@ -150,6 +150,8 @@ print.slcm = function(x, digits = max(3L, getOption("digits") - 3L), ...) {
 #'   
 #'   model_reasoning = slcm(items_matrix_reasoning, k = 4, 
 #'                          burnin = burnin, chain_length = chain_length)
+#'                          
+#'   print(model_reasoning)
 #' }
 slcm = function(
   y,
