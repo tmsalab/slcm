@@ -146,6 +146,9 @@ print.slcm = function(x, digits = max(3L, getOption("digits") - 3L), ...) {
 #' @export
 #'
 #' @examples
+#' # Load Namespace
+#' naming = requireNamespace("edmdata", quietly = TRUE)
+#' 
 #' # Use a demo data set from the paper
 #' data("items_matrix_reasoning", package = "edmdata")
 #'   
