@@ -23,11 +23,11 @@ RoxygenNote: 7.3.1
 LinkingTo: 
     Rcpp,
     RcppArmadillo
-Imports: 
+Imports:
+    edmdata,
     Rcpp
 URL: https://tmsalab.github.io/slcm/, https://github.com/tmsalab/slcm
 BugReports: https://github.com/tmsalab/slcm/issues
 Roxygen: list(markdown = TRUE)
 Suggests: 
-    edmdata,
     altdoc

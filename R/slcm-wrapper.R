@@ -147,17 +147,15 @@ print.slcm = function(x, digits = max(3L, getOption("digits") - 3L), ...) {
 #'
 #' @examples
 #' # Use a demo data set from the paper
-#' if(requireNamespace("edmdata", quietly = TRUE)) {
-#'   data("items_matrix_reasoning", package = "edmdata")
+#' data("items_matrix_reasoning", package = "edmdata")
 #'   
-#'   burnin = 50        # Set for demonstration purposes, increase to at least 1,000 in practice.
-#'   chain_length = 100 # Set for demonstration purposes, increase to at least 10,000 in practice.  
+#' burnin = 50        # Set for demonstration purposes, increase to at least 1,000 in practice.
+#' chain_length = 100 # Set for demonstration purposes, increase to at least 10,000 in practice.  
 #'   
-#'   model_reasoning = slcm(items_matrix_reasoning, k = 4, 
-#'                          burnin = burnin, chain_length = chain_length)
+#' model_reasoning = slcm(items_matrix_reasoning, k = 4, 
+#'                        burnin = burnin, chain_length = chain_length)
 #'                          
-#'   print(model_reasoning)
-#' }
+#' print(model_reasoning)
 slcm = function(
   y,
   k,
