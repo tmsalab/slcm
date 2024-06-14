@@ -114,6 +114,6 @@ model_reasoning$estimates$theta$mean
 ### Q Matrix
 
 ```{r}
-# Item response probabilities
+# Estimated 0/1 Q matrix
 model_reasoning$estimates$q
 ```
