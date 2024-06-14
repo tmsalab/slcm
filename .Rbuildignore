@@ -7,5 +7,11 @@
 ^data-raw$
 ^src/\.clang-format$
 ^README\.Rmd$
+^README\.qmd$
+^README\.html$
 ^cran-comments\.md$
 ^CRAN-SUBMISSION$
+^altdoc$
+README_files/
+^_quarto$
+vignettes/
