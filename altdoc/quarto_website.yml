@@ -38,7 +38,9 @@ webr:
   packages: ['$ALTDOC_PACKAGE_NAME']
   repos:
     - $ALTDOC_PACKAGE_URL
-    
+  cell-options:
+    autorun: true
+
 # Attach extensions
 filters:
 - panelize
