@@ -1,8 +1,25 @@
+---
+format: gfm
+---
+
+<!-- README.md is generated from README.qmd. Please edit that file -->
+
+```{r}
+#| label: setup
+#| include: false
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
 # slcm
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/tmsalab/slcm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tmsalab/slcm/actions/workflows/R-CMD-check.yaml)
-[![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
+[![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
 <!-- badges: end -->
 
 The goal of `slcm` is to provide an implementation of the exploratory 
