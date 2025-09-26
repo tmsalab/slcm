@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         
       # Build the local R package and structure the CRAN repository
       - name: Build WASM R packages
@@ -31,7 +31,7 @@ jobs:
         with:
           packages: "."
           repo-path: "_site"
-          webr-image: "ghcr.io/r-wasm/webr:v0.4.2" # fixed version for now
+          webr-image: "ghcr.io/r-wasm/webr:v0.5.5" # fixed version for now
       
       # Upload the CRAN repository for use in the next step
       # Make sure to set a retention day to avoid running into a cap
@@ -60,7 +60,7 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: quarto-dev/quarto-actions/setup@v2
 
@@ -103,7 +103,7 @@ jobs:
       # Make sure to set a retention day to avoid running into a cap
       # This artifact shouldn't be required after deployment onto pages was a success.
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with: 
           retention-days: 1
       
