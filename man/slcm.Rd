@@ -73,13 +73,16 @@ procedure. Meanwhile, the \strong{\code{chain}} list contains full MCMC values. 
 the \strong{\code{details}} list provides information regarding the estimation call.
 }
 \examples{
+# Load Namespace
+naming = requireNamespace("edmdata", quietly = TRUE)
+
 # Use a demo data set from the paper
 data("items_matrix_reasoning", package = "edmdata")
   
 burnin = 50        # Set for demonstration purposes, increase to at least 1,000 in practice.
 chain_length = 100 # Set for demonstration purposes, increase to at least 10,000 in practice.  
   
-model_reasoning = slcm(items_matrix_reasoning, k = 4, 
+model_reasoning = slcm(edmdata::items_matrix_reasoning, k = 4, 
                        burnin = burnin, chain_length = chain_length)
                          
 print(model_reasoning)

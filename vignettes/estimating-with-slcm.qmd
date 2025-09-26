@@ -62,6 +62,12 @@ We can retrieve the matrix reasoning data set used in the SLCM paper from the
 `edmdata` package:
 
 ```{r}
+#| echo: false
+
+nameing <- requireNamespace("edmdata")
+```
+
+```{r}
 data("items_matrix_reasoning", package = "edmdata")
 ```
 
@@ -84,7 +90,7 @@ burnin = 50
 chain_length = 100 
 
 model_reasoning = slcm(
-  items_matrix_reasoning, k = 4, 
+  edmdata::items_matrix_reasoning, k = 4, 
   burnin = burnin, chain_length = chain_length)
 ```
 
