@@ -2,7 +2,7 @@
 
 <!-- README.md is generated from README.qmd. Please edit that file -->
 
-# slcm
+# slcm <a href="https://tmsalab.github.io/slcm/"><picture><source media="(prefers-color-scheme: dark)" srcset="man/figures/slcm-logo-animated-dark.svg"><img src="man/figures/slcm-logo-animated-light.svg" width="150" align="right" alt="A hexagonal logo for slcm: the word slcm sits under an axis line on which a solid normal bell, the slab, stands centred on the orange l, which rises through the bell and off the top edge as the spike at exactly zero."/></picture></a>
 
 <!-- badges: start -->
 

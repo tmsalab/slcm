@@ -23,11 +23,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         
       # Build the local R package and structure the CRAN repository
       - name: Build WASM R packages
-        uses: r-wasm/actions/build-rwasm@v1
+        uses: r-wasm/actions/build-rwasm@v3
         with:
           packages: "."
           repo-path: "_site"
@@ -36,7 +36,7 @@ jobs:
       # Upload the CRAN repository for use in the next step
       # Make sure to set a retention day to avoid running into a cap
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: rwasmrepo
           path: |
@@ -60,7 +60,7 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: quarto-dev/quarto-actions/setup@v2
 
@@ -93,7 +93,7 @@ jobs:
       # Download the built R WASM CRAN repository from the prior step.
       # Extract it into the `_site` directory
       - name: Download build artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: rwasmrepo
           path: _site
@@ -103,7 +103,7 @@ jobs:
       # Make sure to set a retention day to avoid running into a cap
       # This artifact shouldn't be required after deployment onto pages was a success.
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with: 
           retention-days: 1
       
@@ -112,4 +112,4 @@ jobs:
       # instead of using `docs/` or the `gh-pages` branch of the repository
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
