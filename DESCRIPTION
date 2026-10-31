@@ -1,6 +1,6 @@
 Package: slcm
 Title: Sparse Latent Class Model for Cognitive Diagnosis
-Version: 0.1.1
+Version: 0.1.1.9000
 Authors@R: c(
       person("James Joseph", "Balamuta",
              email = "balamut2@illinois.edu", 
@@ -24,7 +24,9 @@ Depends: R (>= 4.3.0)
 Imports: Rcpp (>= 1.1.0), edmdata
 LinkingTo: Rcpp, RcppArmadillo (>= 15.0.2-2)
 Suggests: 
-    altdoc
+    altdoc,
+    testthat (>= 3.0.0)
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
 RoxygenNote: 7.3.3
+Config/testthat/edition: 3
