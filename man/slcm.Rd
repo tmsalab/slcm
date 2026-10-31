@@ -15,7 +15,7 @@ slcm(
 )
 }
 \arguments{
-\item{y}{Item Matrix}
+\item{y}{Item Matrix. Missing values are not allowed.}
 
 \item{k}{Dimension to estimate for Q matrix}
 

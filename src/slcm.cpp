@@ -1040,7 +1040,7 @@ Rcpp::List slcm_cpp(const arma::mat &Y,
                                    Atable, LBtable, Bindices, qtable, P,
                                    psi_invj, m0, d0, a0, b0);
 
-        if (t > burnin - 1) {
+        if (t >= burnin) {
             tmburn = t - burnin;
             arma::mat theta = BetatoTheta(J, nClass, BETA, Atable);
             // Compute -2ll for DIC criteria

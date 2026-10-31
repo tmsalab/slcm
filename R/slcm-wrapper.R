@@ -98,7 +98,7 @@ print.slcm = function(x, digits = max(3L, getOption("digits") - 3L), ...) {
 #' Performs the Gibbs sampling routine for a sparse latent class model
 #' as described in Chen et al. (2020) <doi: 10.1007/s11336-019-09693-2>
 #'
-#' @param y                 Item Matrix
+#' @param y                 Item Matrix. Missing values are not allowed.
 #' @param k                 Dimension to estimate for Q matrix
 #' @param burnin            Amount of Draws to Burn
 #' @param chain_length      Number of Iterations for chain.
@@ -171,6 +171,9 @@ slcm = function(
     # Perform some quality checks
     stopifnot(is.matrix(y))
     stopifnot(chain_length > burnin)
+    if (anyNA(y)) {
+        stop("`y` must not contain missing values.", call. = FALSE)
+    }
     
     # Disable order for now
     order = k
