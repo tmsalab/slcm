@@ -21,11 +21,11 @@ License: GPL (>= 2)
 URL: https://tmsalab.github.io/slcm/, https://github.com/tmsalab/slcm
 BugReports: https://github.com/tmsalab/slcm/issues
 Depends: R (>= 4.3.0)
-Imports: Rcpp (>= 1.1.0), edmdata
-LinkingTo: Rcpp, RcppArmadillo (>= 15.0.2-2)
+Imports: Rcpp (>= 1.1.2), edmdata (>= 1.3.0)
+LinkingTo: Rcpp (>= 1.1.2), RcppArmadillo (>= 15.6.2-1)
 Suggests: 
-    altdoc,
-    testthat (>= 3.0.0)
+    altdoc (>= 0.7.3),
+    testthat (>= 3.3.2)
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
 RoxygenNote: 7.3.3
