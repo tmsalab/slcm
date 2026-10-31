@@ -45,6 +45,8 @@ jobs:
 
 
   altdoc:
+    # Pull requests can't deploy to the github-pages environment
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     # Add a dependency on the prior job completing
     needs: rwasmbuild
